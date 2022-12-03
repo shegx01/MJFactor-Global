@@ -16,8 +16,10 @@ import SectionHeader from "../src/components/SectionHeader";
 import ServiceDisplay from "../src/components/ServicesDisplay";
 import ServiceDisplayFooter from "../src/components/ServiceDisplayFooter";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
+import ImageList from "@mui/material/ImageList";
+import ImageListItem from "@mui/material/ImageListItem";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
 
 export default function Home() {
   const navItems = ["Services", "About", "Blog", "Contact Us"];
@@ -263,21 +265,25 @@ export default function Home() {
                 <ServiceDisplay imageUrl="/images/roofingWork.jpg">
                   <ServiceDisplayFooter />
                 </ServiceDisplay>
-                <Box sx={{
-                  display: 'inline-flex',
-                   width: '100%', py: 4,
-                   alignContent: 'center',
-                   justifyContent: 'center'
-                  }
-                   }>
+                <Box
+                  sx={{
+                    display: "inline-flex",
+                    width: "100%",
+                    py: 4,
+                    alignContent: "center",
+                    justifyContent: "center",
+                  }}
+                >
                   <Box>
-                  <IconButton sx={{background: 'white'}}>
-                    <ChevronLeft />
-                  </IconButton>
+                    <IconButton sx={{ background: "white" }}>
+                      <ChevronLeft />
+                    </IconButton>
 
-                  <IconButton sx={{ml: 2,background: '#0E2240', color: 'white'}}>
-                    <ChevronRight />
-                  </IconButton>
+                    <IconButton
+                      sx={{ ml: 2, background: "#0E2240", color: "white" }}
+                    >
+                      <ChevronRight />
+                    </IconButton>
                   </Box>
                 </Box>
               </Container>
@@ -286,38 +292,56 @@ export default function Home() {
                   headerSubtitle={"Feedback and clients"}
                   headerTitle={"CUSTOMERS"}
                 />
-                <Box css={{
-                  display: 'flex',
-                  alignItems: 'center'
-                }}>
+                <Box
+                  css={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
                   <Box>
-                    <Avatar sx={{
-                      height: 80,
-                      width: 80
-                    }} src={'images/testimony.png'} />
-                  </Box>
-                  <Box sx={{
-                    pl: 2
-                  }}>
-                    <Typography sx={{
-                      fontSize: 14
-                    }}>Did a great job on my Security camera and responded with in 2hr when I had an emergency</Typography>
-                    <Box sx={{
-                      color: '#B5038D',
-                      display: 'flex',
-                      py: 1
-                    }}>
-                      <Box
-                       css={{
-                        paddingRight: 8
+                    <Avatar
+                      sx={{
+                        height: 80,
+                        width: 80,
                       }}
-                      >&#8212;
+                      src={"images/testimony.png"}
+                    />
+                  </Box>
+                  <Box
+                    sx={{
+                      pl: 2,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                      }}
+                    >
+                      Did a great job on my Security camera and responded with
+                      in 2hr when I had an emergency
+                    </Typography>
+                    <Box
+                      sx={{
+                        color: "#B5038D",
+                        display: "flex",
+                        py: 1,
+                      }}
+                    >
+                      <Box
+                        css={{
+                          paddingRight: 8,
+                        }}
+                      >
+                        &#8212;
                       </Box>
                       <Typography
-                      css={{
-                        fontSize: 14
-                      }}
-                      component={'span'}>Getdone Limited</Typography>
+                        css={{
+                          fontSize: 14,
+                        }}
+                        component={"span"}
+                      >
+                        Getdone Limited
+                      </Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -325,28 +349,121 @@ export default function Home() {
             </Box>
             <Box sx={{ background: "", pt: 1, pb: 4 }}>
               <Container>
-              <SectionHeader
+                <SectionHeader
                   headerSubtitle={"Discover some of our latest projects"}
                   headerTitle={"Projects"}
                 />
               </Container>
-              <ImageList css={{
-                display: "inline-flex"
-              }}>
-                {
-                  [
-                    '/images/waterBlog.jpg',
-                    '/images/westernDesktop.jpg',
-                    '/images/7.jpg',
-                  ].map((url) =>  {
-                    return (
-                      <ImageListItem >
-                        <img src={url} alt={'image'} />
-                      </ImageListItem>
-                    )
-                  })
-                }
+              <ImageList
+                css={{
+                  display: "inline-flex",
+                }}
+              >
+                {[
+                  "/images/waterBlog.jpg",
+                  "/images/westernDesktop.jpg",
+                  "/images/7.jpg",
+                ].map((url) => {
+                  return (
+                    <ImageListItem>
+                      <img src={url} alt={"image"} />
+                    </ImageListItem>
+                  );
+                })}
               </ImageList>
+            </Box>
+            <Box sx={{ background: "#0e2240cf", color: "white", p: 2 }}>
+              <Box
+                css={{
+                  textTransform: "uppercase",
+                  fontWeight: "medium",
+                  fontSize: 14,
+                  padding: "16px 0",
+                }}
+              >
+                get free quote
+              </Box>
+              <Box
+                css={{
+                  fontSize: 14,
+                  lineHeight: 2,
+                }}
+              >
+                Do you need help with roof installations, building construction,
+                roof repairs, replacements or maintenance? Give us a call on
+                📞(+234) 703 938 3558 or fill in the contact form below with
+                your enquiry and we will get back to you as soon as possible.
+              </Box>
+              <Divider
+                sx={{
+                  color: "white",
+                }}
+              />
+              {/* form input goes here */}
+              <Box
+                css={{
+                  display: "flex",
+                  flexDirection: "column",
+                  color: "white",
+                }}
+              >
+                <Box
+                  css={{
+                    background: "#eeeeee",
+                    marginTop: 12,
+                    padding: " 20px 12px 0",
+                    display: "flex",
+                    flexDirection: "column",
+                    flexWrap: "nowrap",
+                    borderRadius: 5,
+                  }}
+                >
+                  <FormControl
+                    sx={{
+                      color: "white",
+                    }}
+                    variant="filled"
+                  >
+                    <TextField
+                      color="secondary"
+                      id="name"
+                      placeholder="Your Name"
+                      variant="outlined"
+                    />
+                    <TextField
+                      sx={{
+                        mt: 2,
+                      }}
+                      color="secondary"
+                      id="name"
+                      placeholder="Your Email"
+                      variant="outlined"
+                    />
+                    <TextField
+                      sx={{
+                        mt: 2,
+                      }}
+                      color="secondary"
+                      id="name"
+                      placeholder="Your Enquiries/messages"
+                      multiline
+                      variant="outlined"
+                    />
+                  </FormControl>
+                  <Box
+                    sx={{
+                      py: 2,
+                    }}
+                  >
+                    <Button color="secondary" variant="contained" size="medium">
+                      submit
+                    </Button>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+            <Box sx={{ background: "#0E2240", color: "red", p: 2 }}>
+
             </Box>
           </Box>
         </Box>
