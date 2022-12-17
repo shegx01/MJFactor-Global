@@ -33,13 +33,16 @@ const Header = () => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
+            <ListItemButton sx={{ textAlign: "left" }}>
               <Link
                 sx={{
                   textDecoration: "none",
                   display: "flex",
                   width: "100%",
-                  justifyContent: "center",
+                  justifyContent: "left",
+                  fontSize: 14,
+                  color: "#0E2240",
+                  pl: 2
                 }}
                 href={"#"}
               >
@@ -111,7 +114,7 @@ const Header = () => {
       </AppBar>
       <Box component="nav">
         <Drawer
-        anchor="bottom"
+        anchor="left"
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}

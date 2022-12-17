@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 
 type Props = {
   headerTitle: String;
-  headerSubtitle: String;
+  headerSubtitle?: String;
 };
 
 const SectionHeader: React.FC<Props> = ({ headerTitle, headerSubtitle }) => {
@@ -23,9 +23,9 @@ const SectionHeader: React.FC<Props> = ({ headerTitle, headerSubtitle }) => {
           </Box>
         </Box>
       </Box>
-      <Box sx={{ mb: 2 }}>
+     { headerSubtitle && <Box sx={{ mb: 2 }}>
         <Typography sx={{ fontweight: "medium" }}>{headerSubtitle}</Typography>
-      </Box>
+      </Box>}
     </Box>
   );
 };

@@ -12,6 +12,7 @@ const FooterBody: React.FC<Props> = ({items}) => {
         <Box sx={{ color: "white" }}>
         {items.map(({ icon, text }) => (
           <Box
+          key={text}
             sx={{
               display: "flex",
               alignItems: "center",
