@@ -12,9 +12,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
 import Link from "../Link";
-
+import { useRouter } from "next/router";
 const Header = () => {
-  const navItems = ["Services", "About", "Blog", "Contact Us"];
+  const router = useRouter();
+  const navItems = [
+    { to: "/services", label: "Services" },
+    { to: "/about-us", label: "About Us" },
+    { to: "/blogs", label: "Blogs" },
+    { to: "/contact-us", label: "Contact Us" },
+  ];
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
@@ -31,10 +37,11 @@ const Header = () => {
       </Box>
       <Divider />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map(({ to, label }) => (
+          <ListItem key={to} disablePadding>
             <ListItemButton sx={{ textAlign: "left" }}>
               <Link
+                href={to}
                 sx={{
                   textDecoration: "none",
                   display: "flex",
@@ -42,12 +49,10 @@ const Header = () => {
                   justifyContent: "left",
                   fontSize: 14,
                   color: "#0E2240",
-                  pl: 2
+                  pl: 2,
                 }}
-                href={"#"}
               >
-                {" "}
-                {item}{" "}
+                {label}
               </Link>
             </ListItemButton>
           </ListItem>
@@ -63,22 +68,31 @@ const Header = () => {
         sx={{ boxShadow: 0, background: "white" }}
       >
         <Toolbar>
-          <Box sx={{ display: { xs: "block", sm: "none" } }}>
+          <IconButton
+            disableFocusRipple
+            disableTouchRipple
+            sx={{ display: { xs: "block", sm: "none" } }}
+            css={{
+              cursor: "pointer",
+            }}
+            onClick={() => router.push("/")}
+          >
             <img
               style={{ width: "54%", height: "60%" }}
               src="icons/mjfactor.svg"
               alt="MJ Factor"
             />
-          </Box>
+          </IconButton>
           <Box
             sx={{
               display: { xs: "none", sm: "block" },
             }}
           >
-            {navItems.map((item) => (
+            {navItems.map(({ to, label }) => (
               <Link
-                href={"#"}
-                key={item}
+                activeClassName={""}
+                href={to}
+                key={to}
                 sx={{
                   color: "inherit",
                   textTransform: "capitalize",
@@ -86,7 +100,7 @@ const Header = () => {
                   textDecoration: "none",
                 }}
               >
-                {item}
+                {label}
               </Link>
             ))}
           </Box>
@@ -114,7 +128,7 @@ const Header = () => {
       </AppBar>
       <Box component="nav">
         <Drawer
-        anchor="left"
+          anchor="left"
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
