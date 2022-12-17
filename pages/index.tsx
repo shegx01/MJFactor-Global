@@ -19,7 +19,6 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 
 export default function Home() {
-
   return (
     <Box>
       <Box sx={{ display: "flex" }}>
@@ -152,7 +151,15 @@ export default function Home() {
                   headerTitle={"OUR SERVICES"}
                 />
                 <ServiceDisplay imageUrl="/images/roofingWork.jpg">
-                  <ServiceDisplayFooter />
+                  <ServiceDisplayFooter
+                    title1="Roofing Work"
+                    title2="This is where your spendings is observed"
+                    body="MJ FACTOR Is Nigeria’s Fastest Growing Roofing Construction Company
+                   With More Than Two Decades Experience. Perhaps even more than the
+                   walls, doors"
+                    buttonText="Explore More"
+                    target="/services"
+                  />
                 </ServiceDisplay>
                 <Box
                   sx={{
@@ -294,7 +301,7 @@ export default function Home() {
                   display: "flex",
                   flexDirection: "column",
                   color: "white",
-                  margin: "8px 0"
+                  margin: "8px 0",
                 }}
               >
                 <Box
