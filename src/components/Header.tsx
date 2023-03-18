@@ -31,7 +31,7 @@ const Header = () => {
       <Box sx={{ display: { xs: "block", sm: "none" }, ml: "auto", my: 1 }}>
         <img
           style={{ width: "30%", height: "40%" }}
-          src="icons/mjfactor.svg"
+          src="/icons/mjfactor.svg"
           alt="MJ Factor"
         />
       </Box>
@@ -68,9 +68,7 @@ const Header = () => {
         sx={{ boxShadow: 0, background: "white" }}
       >
         <Toolbar>
-          <IconButton
-            disableFocusRipple
-            disableTouchRipple
+          <Box
             sx={{ display: { xs: "block", sm: "none" } }}
             css={{
               cursor: "pointer",
@@ -82,7 +80,7 @@ const Header = () => {
               src="icons/mjfactor.svg"
               alt="MJ Factor"
             />
-          </IconButton>
+          </Box>
           <Box
             sx={{
               display: { xs: "none", sm: "block" },
@@ -107,8 +105,12 @@ const Header = () => {
           <Box sx={{ display: { xs: "none", sm: "block" }, ml: "auto" }}>
             <img
               style={{ width: "60%", height: "60%" }}
-              src="icons/mjfactor.svg"
+              src="/icons/mjfactor.svg"
               alt="MJ Factor"
+              onClick={() => router.push("/")}
+              css={{
+                cursor: 'pointer'
+              }}
             />
           </Box>
           <IconButton

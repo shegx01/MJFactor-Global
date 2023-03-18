@@ -1,7 +1,5 @@
 import * as React from "react";
 import { Box } from "@mui/system";
-import { Typography, IconButton, Button } from "@mui/material";
-import { ChevronRight } from "@mui/icons-material";
 
 type Props = {
   imageUrl: string;
@@ -25,7 +23,8 @@ const ServiceDisplay: React.FC<Props> = ({ imageUrl, children}) => {
           backgroundImage: `url(${imageUrl})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          justifyContent: "center",
+          justifyContent: "cover",
+          backgroundPosition: "center"
         }}
       ></Box>
       {children }
