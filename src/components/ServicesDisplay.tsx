@@ -1,24 +1,28 @@
 import * as React from "react";
 import { Box } from "@mui/system";
+import styles from './ServicesDisplay.module.css'
 
 type Props = {
   imageUrl: string;
+  height?: number;
   children?: React.ReactNode
 };
 
-const ServiceDisplay: React.FC<Props> = ({ imageUrl, children}) => {
+const ServiceDisplay: React.FC<Props> = ({ imageUrl, height, children}) => {
   return (
     <Box
       css={{
         display: "flex",
         flexDirection: "column",
         alignContent: "center",
+        width: '100%'
       }}
     >
       <Box
         css={{
           display: "block",
-          height: 310,
+          position: 'relative',
+          height: !!height ? height : 310,
           width: "100%",
           backgroundImage: `url(${imageUrl})`,
           backgroundRepeat: "no-repeat",

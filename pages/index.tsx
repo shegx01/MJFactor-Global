@@ -3,22 +3,51 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
 import Toolbar from "@mui/material/Toolbar";
-import Link from "../src/Link";
 import { Button, Avatar, IconButton } from "@mui/material";
 import SectionHeader from "../src/components/SectionHeader";
 import ServiceDisplay from "../src/components/ServicesDisplay";
 import ServiceDisplayFooter from "../src/components/ServiceDisplayFooter";
-import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
+import styles from "./index.module.css";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const services = [
+    {
+      imageUrl: "/images/roofingWork.jpg",
+      title1: "Roofing Work",
+      title2: "This is where your spendings is observed",
+      body: `MJ FACTOR Is Nigeria’s Fastest Growing Roofing Construction Company
+     With More Than Two Decades Experience. Perhaps even more than the
+     walls, doors`,
+      buttonText: "Explore More",
+      target: "/services",
+    },
+    {
+      imageUrl: "/images/cctvImg.jpg",
+      title1: "CCTV Installation",
+      title2: "The monitoring your home and office deserves",
+      body: `Monitoring your home and assets has never been that easy
+         as we have the required expertise to secure everything entrust to us. You can be rest assured
+         that we have your back`,
+      buttonText: "Explore More",
+      target: "/services",
+    },
+    {
+      imageUrl: "/images/interiorDesign.jpg",
+      title1: "CCTV Installation",
+      title2: "Your home can be as beautify as you are",
+      body: `We make it our problem to ensure your house is really a place call home. We manage your decorations
+         and fittings right from your main entrace to the exit.`,
+      buttonText: "Explore More",
+      target: "/services",
+    },
+  ];
   return (
     <Box>
       <Box sx={{ display: "flex" }}>
@@ -39,18 +68,20 @@ export default function Home() {
                 justifyContent: "center",
                 alignItems: "center",
                 flexDirection: "column",
+                backgroundPosition: "center",
               }}
+              className={styles.heroImg}
             >
               <Typography
                 mt={0}
                 variant="h6"
                 component={"span"}
                 sx={{
-                  fontSize: "26px",
                   color: "white",
                   textAlign: "center",
                   maxWidth: "88vw",
                 }}
+                className={styles.heroImgText}
               >
                 We are The Brilliant in terms of Installation and Construction
               </Typography>
@@ -58,11 +89,12 @@ export default function Home() {
               <Box sx={{ mt: 3 }}>
                 <Button
                   sx={{
-                    background: "white",
-                    color: "#B5038D",
+                    background: "#B5038D",
+                    color: "white",
                     fontSize: "12px",
+                    borderRadius: 0,
                   }}
-                  size="large"
+                  className={styles.heroImgButton}
                   variant="contained"
                 >
                   Get to know Us
@@ -84,7 +116,9 @@ export default function Home() {
                   fontWeight: 700,
                   color: "white",
                   background: "#B5038D",
+                  // padding: "20px",
                 }}
+                className={styles.heroImgFooter}
               >
                 <Box
                   component={"span"}
@@ -93,7 +127,7 @@ export default function Home() {
                   5
                 </Box>
                 <Typography sx={{ fontSize: "16px" }} component={"span"}>
-                  Years Of <br></br> Experience
+                  Years Of <br /> Experience
                 </Typography>
               </Box>
               <Box
@@ -102,90 +136,207 @@ export default function Home() {
                   witdth: "100%",
                   color: "white",
                   padding: "16px",
+                  flex: 1,
+                  alignContent: "center",
+                  justifyContent: "center",
                 }}
               >
                 <Box
-                  sx={{ display: "flex", flexWrap: "wrap", fontSize: "12px" }}
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    fontSize: "12px",
+                    alignItems: "center",
+                    justifyItems: "center",
+                    alignContent: "center",
+                    height: "100%",
+                  }}
                 >
                   <Typography sx={{ paddingRight: "10px" }} component={"span"}>
                     Have Questions?
                   </Typography>
-                  <Typography sx={{ color: "#FAA519" }} component={"span"}>
+                  <Typography
+                    sx={{ color: "#FAA519", paddingRight: 2 }}
+                    component={"span"}
+                  >
                     (+234) 703 938 3558
                   </Typography>
+                  <Typography
+                    sx={{ fontSize: "12px" }}
+                    component={"span"}
+                    className={styles.heroFooterAvailable}
+                  >
+                    We are available 24/7 to attend to you enquiries and orders
+                  </Typography>
                 </Box>
-                <Divider sx={{ color: "white", my: 1 }} />
-                <Typography sx={{ fontSize: "12px" }} component={"span"}>
-                  We are available 24/7 to attend to you enquiries and orders
-                </Typography>
               </Box>
             </Box>
-            <Container>
-              <SectionHeader
-                headerSubtitle={"Know Everything About Us"}
-                headerTitle={"ABOUT US"}
-              />
-              <ServiceDisplay imageUrl="/images/aboutUs.jpg" />
-              <Box>
-                <Typography sx={{ my: 2, fontSize: 16 }}>
-                  Over the years, our company has grown to become an innovative
-                  market leader in the building material and security industry.
-                  Our driving force is to consistently work towards meeting the
-                  high standard that is expected of us. We have a team of
-                  professionals all over the country...
-                </Typography>
-              </Box>
-              <Box sx={{ pt: 2, pb: 4 }}>
-                <Button
-                  sx={{ borderColor: "#B5038D", color: "#0E2240" }}
-                  variant="outlined"
+            <Container
+              css={{
+                marginTop: 20,
+              }}
+              className={styles.intro}
+            >
+              <Box
+                css={{
+                  display: "flex",
+                  width: "100%",
+                  flexDirection: "column",
+                  marginBottom: 30,
+                }}
+                className={styles.flexRow}
+              >
+                <div className={styles.hidden}>
+                  <SectionHeader
+                    headerSubtitle={"Know Everything About Us"}
+                    headerTitle={"ABOUT US"}
+                  />
+                </div>
+                <Box
+                  css={{
+                    display: "none",
+                    maxWidth: "50%",
+                    alignItems: "center",
+                  }}
+                  className={styles.flex}
                 >
-                  get to know us
-                </Button>
+                  {/* SectionHeader For Desktop */}
+                  <Box css={{}}>
+                    <Box sx={{ mt: 4, mb: 2 }}>
+                      <Box sx={{ pr: 5 }}>
+                        <Box sx={{ display: "block", color: "#B5038D" }}>
+                          <Typography
+                            sx={{
+                              color: "#B5038D",
+                              fontWeight: "bold",
+                              textTransform: "uppercase",
+                              fontSize: "1.2rem",
+                            }}
+                          >
+                            ABOUT US
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                    <Box sx={{ mb: 2 }}>
+                      <Typography sx={{ fontWeight: "700" }}>
+                        "Know Everything About Us"
+                      </Typography>
+                    </Box>
+
+                    <div>
+                      <Box>
+                        <Typography
+                          sx={{
+                            my: 2,
+                            fontSize: 16,
+                            maxWidth: "70%",
+                            lineHeight: 2,
+                          }}
+                        >
+                          Over the years, our company has grown to become an
+                          innovative market leader in the building material and
+                          security industry. Our driving force is to
+                          consistently work towards meeting the high standard
+                          that is expected of us. We have a team of
+                          professionals all over the country...
+                        </Typography>
+                      </Box>
+                      <Box sx={{ pt: 2, pb: 4 }}>
+                        <Button
+                          sx={{ borderColor: "#B5038D", color: "#0E2240" }}
+                          variant="outlined"
+                        >
+                          get to know us
+                        </Button>
+                      </Box>
+                    </div>
+                  </Box>
+                </Box>
+                <div
+                  css={{
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <ServiceDisplay imageUrl="/images/aboutUs.jpg" height={380} />
+                </div>
+                <div className={styles.hidden}>
+                  <Box>
+                    <Typography
+                      sx={{
+                        my: 2,
+                        fontSize: 16,
+                        maxWidth: "75%",
+                        lineHeight: 2,
+                      }}
+                    >
+                      Over the years, our company has grown to become an
+                      innovative market leader in the building material and
+                      security industry. Our driving force is to consistently
+                      work towards meeting the high standard that is expected of
+                      us. We have a team of professionals all over the
+                      country...
+                    </Typography>
+                  </Box>
+                  <Box sx={{ pt: 2, pb: 4 }}>
+                    <Button
+                      sx={{ borderColor: "#B5038D", color: "#0E2240" }}
+                      variant="outlined"
+                    >
+                      get to know us
+                    </Button>
+                  </Box>
+                </div>
               </Box>
             </Container>
             <Box sx={{ background: "#EEEEEE", pt: 1, pb: 4 }}>
-              <Container sx={{}}>
+              <Container
+                sx={{ my: 2, pb: 2, background: "#ffffff61", borderRadius: 5 }}
+              >
                 <SectionHeader
                   headerSubtitle={"What We Offer"}
                   headerTitle={"OUR SERVICES"}
                 />
-                <ServiceDisplay imageUrl="/images/roofingWork.jpg">
-                  <ServiceDisplayFooter
-                    title1="Roofing Work"
-                    title2="This is where your spendings is observed"
-                    body="MJ FACTOR Is Nigeria’s Fastest Growing Roofing Construction Company
-                   With More Than Two Decades Experience. Perhaps even more than the
-                   walls, doors"
-                    buttonText="Explore More"
-                    target="/services"
-                  />
-                </ServiceDisplay>
+                <Box
+                  css={{ display: "flex", flexDirection: "column" }}
+                  className={styles.flexRow}
+                >
+                  {services.map((item, idx) => (
+                    <div key={idx} css={{ padding: 8 }}>
+                      <ServiceDisplay imageUrl={item.imageUrl}>
+                        <ServiceDisplayFooter
+                          title1={item.title1}
+                          title2={item.title2}
+                          body={item.body}
+                          buttonText={item.buttonText}
+                          target={item.target}
+                        />
+                      </ServiceDisplay>
+                    </div>
+                  ))}
+                </Box>
                 <Box
                   sx={{
                     display: "inline-flex",
                     width: "100%",
                     py: 4,
                     alignContent: "center",
-                    justifyContent: "center",
+                    // justifyContent: "center",
                   }}
                 >
-                  <Box>
-                    <IconButton sx={{ background: "white" }}>
-                      <ChevronLeft />
-                    </IconButton>
-
-                    <IconButton
-                      sx={{ ml: 2, background: "#0E2240", color: "white" }}
-                    >
-                      <ChevronRight />
-                    </IconButton>
-                  </Box>
+                  <Button
+                    color="secondary"
+                    onClick={() => router.push("/services")}
+                  >
+                    see all services
+                  </Button>
                 </Box>
               </Container>
-              <Container>
+              <Container sx={{ my: 2 }}>
                 <SectionHeader
-                  headerSubtitle={"Feedback and clients"}
+                  headerSubtitle={"Feedback from clients"}
                   headerTitle={"CUSTOMERS"}
                 />
                 <Box
@@ -194,50 +345,54 @@ export default function Home() {
                     alignItems: "center",
                   }}
                 >
+                  {/* Testimony1 */}
                   <Box>
-                    <Avatar
-                      sx={{
-                        height: 80,
-                        width: 80,
-                      }}
-                      src={"images/testimony.png"}
-                    />
-                  </Box>
-                  <Box
-                    sx={{
-                      pl: 2,
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: 14,
-                      }}
-                    >
-                      Did a great job on my Security camera and responded with
-                      in 2hr when I had an emergency
-                    </Typography>
+                    <Box css={{ marginLeft: 20 }}>
+                      <Avatar
+                        sx={{
+                          height: 80,
+                          width: 80,
+                        }}
+                        src={"images/testimony.png"}
+                      />
+                    </Box>
                     <Box
                       sx={{
-                        color: "#B5038D",
-                        display: "flex",
-                        py: 1,
+                        pl: 2,
                       }}
                     >
-                      <Box
-                        css={{
-                          paddingRight: 8,
-                        }}
-                      >
-                        &#8212;
-                      </Box>
                       <Typography
-                        css={{
+                        sx={{
                           fontSize: 14,
                         }}
-                        component={"span"}
                       >
-                        Getdone Limited
+                        Did a great job on my Security camera and responded
+                        within 2hr when I had an emergency issue
                       </Typography>
+                      <Box
+                        sx={{
+                          color: "#B5038D",
+                          display: "flex",
+                          py: 1,
+                        }}
+                      >
+                        <Box
+                          css={{
+                            paddingRight: 8,
+                          }}
+                        >
+                          &#8212;
+                        </Box>
+                        <Typography
+                          css={{
+                            fontSize: "1rem",
+                            textTransform: "uppercase",
+                          }}
+                          component={"span"}
+                        >
+                          Getdone Limited
+                        </Typography>
+                      </Box>
                     </Box>
                   </Box>
                 </Box>

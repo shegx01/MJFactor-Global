@@ -1,0 +1,41 @@
+@media screen and (min-width: 1024px) {
+    .heroImg {
+        height: 500px;
+    }
+
+    .heroImgText {
+        font-size: 62px;
+    }
+
+    .heroImgButton {
+        font-size: 24px;
+    }
+
+    .heroImgFooter {
+        padding: 20px 50px;
+    }
+
+    .heroFooterAvailable {
+        font-size: 16px;
+    }
+
+    .intro {
+        margin-top: 40px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .flex {
+        display: flex;
+
+    }
+
+    .flexRow {
+        flex-direction: row;
+
+    }
+}
+
+@media screen and (max-width: 1024px) {}

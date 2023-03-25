@@ -24,7 +24,7 @@ const ServiceDisplayFooter: React.FC<Props> = ({
       css={{
         zIndex: 10,
         background: "white",
-        width: "88vw",
+        width: "88%",
         alignSelf: "center",
         marginTop: "-94px",
       }}
@@ -34,6 +34,8 @@ const ServiceDisplayFooter: React.FC<Props> = ({
         <Typography
           sx={{
             py: 1,
+            fontWeight: "bold",
+            fontSize: "1.1rem",
           }}
         >
           {title2}
@@ -41,6 +43,7 @@ const ServiceDisplayFooter: React.FC<Props> = ({
         <Typography
           css={{
             fontSize: 14,
+            maxWidth: "800px",
           }}
         >
           {body}
