@@ -334,7 +334,7 @@ export default function Home() {
                   </Button>
                 </Box>
               </Container>
-              <Container sx={{ my: 2 }}>
+              <Container sx={{ my: 4 }}>
                 <SectionHeader
                   headerSubtitle={"Feedback from clients"}
                   headerTitle={"CUSTOMERS"}
@@ -399,120 +399,133 @@ export default function Home() {
               </Container>
             </Box>
             <Box sx={{ background: "", pt: 1, pb: 4 }}>
-              <Container>
+              <Container sx={{ my: 4}}>
                 <SectionHeader
                   headerSubtitle={"Discover some of our latest projects"}
                   headerTitle={"Projects"}
                 />
-              </Container>
-              <ImageList
-                css={{
-                  display: "inline-flex",
-                }}
-              >
-                {[
-                  "/images/waterBlog.jpg",
-                  "/images/westernDesktop.jpg",
-                  "/images/7.jpg",
-                ].map((url) => {
-                  return (
-                    <ImageListItem>
-                      <img src={url} alt={"image"} />
-                    </ImageListItem>
-                  );
-                })}
-              </ImageList>
-            </Box>
-            <Box sx={{ background: "#0e2240cf", color: "white", p: 2 }}>
-              <Box
-                css={{
-                  textTransform: "uppercase",
-                  fontWeight: "medium",
-                  fontSize: 14,
-                  padding: "16px 0",
-                }}
-              >
-                get free quote
-              </Box>
-              <Box
-                css={{
-                  fontSize: 14,
-                  lineHeight: 2,
-                }}
-              >
-                Do you need help with roof installations, building construction,
-                roof repairs, replacements or maintenance? Give us a call on
-                📞(+234) 703 938 3558 or fill in the contact form below with
-                your enquiry and we will get back to you as soon as possible.
-              </Box>
-              <Divider
-                sx={{
-                  color: "white",
-                }}
-              />
-              {/* form input goes here */}
-              <Box
-                css={{
-                  display: "flex",
-                  flexDirection: "column",
-                  color: "white",
-                  margin: "8px 0",
-                }}
-              >
-                <Box
+                <ImageList
                   css={{
-                    background: "#eeeeee",
-                    marginTop: 12,
-                    padding: " 20px 12px 0",
-                    display: "flex",
-                    flexDirection: "column",
-                    flexWrap: "nowrap",
-                    borderRadius: 5,
+                    display: "inline-flex",
                   }}
                 >
-                  <FormControl
-                    sx={{
-                      color: "white",
-                    }}
-                    variant="filled"
-                  >
-                    <TextField
-                      color="secondary"
-                      id="name"
-                      placeholder="Your Name"
-                      variant="outlined"
-                    />
-                    <TextField
-                      sx={{
-                        mt: 2,
-                      }}
-                      color="secondary"
-                      id="name"
-                      placeholder="Your Email"
-                      variant="outlined"
-                    />
-                    <TextField
-                      sx={{
-                        mt: 2,
-                      }}
-                      color="secondary"
-                      id="name"
-                      placeholder="Your Enquiries/messages"
-                      multiline
-                      variant="outlined"
-                    />
-                  </FormControl>
+                  {[
+                    "/images/waterBlog.jpg",
+                    "/images/westernDesktop.jpg",
+                    "/images/7.jpg",
+                  ].map((url, id) => {
+                    return (
+                      <ImageListItem
+                        key={id}
+                        css={{
+                          marginLeft: id === 0 ? 0 : 10,
+                        }}
+                      >
+                        <img src={url} alt={"image"} />
+                      </ImageListItem>
+                    );
+                  })}
+                </ImageList>
+              </Container>
+            </Box>
+            <Box sx={{ background: "#0e2240cf", color: "white", p: 2 }}>
+              <Container sx={{my: 4}}>
+                <Box
+                  css={{
+                    textTransform: "uppercase",
+                    fontWeight: "medium",
+                    fontSize: 14,
+                    padding: "16px 0",
+                  }}
+                >
+                  get free quote
+                </Box>
+                <Box
+                  css={{
+                    fontSize: 14,
+                    lineHeight: 2,
+                    maxWidth: "700px"
+                  }}
+                >
+                  Do you need help with roof installations, building
+                  construction, roof repairs, replacements or maintenance? Give
+                  us a call on 📞(+234) 703 938 3558 or fill in the contact form
+                  below with your enquiry and we will get back to you as soon as
+                  possible.
+                </Box>
+                <Divider
+                  sx={{
+                    color: "white",
+                  }}
+                />
+                {/* form input goes here */}
+                <Box
+                  css={{
+                    display: "flex",
+                    flexDirection: "column",
+                    color: "white",
+                    margin: "8px 0",
+                  }}
+                >
                   <Box
-                    sx={{
-                      py: 2,
+                    css={{
+                      background: "#eeeeee",
+                      marginTop: 12,
+                      padding: " 30px",
+                      display: "flex",
+                      flexDirection: "column",
+                      flexWrap: "nowrap",
+                      borderRadius: 5,
                     }}
                   >
-                    <Button color="secondary" variant="contained" size="medium">
-                      submit
-                    </Button>
+                    <FormControl
+                      sx={{
+                        color: "white",
+                      }}
+                      variant="filled"
+                    >
+                      <TextField
+                        color="secondary"
+                        id="name"
+                        placeholder="Your Name"
+                        variant="outlined"
+                      />
+                      <TextField
+                        sx={{
+                          mt: 2,
+                        }}
+                        color="secondary"
+                        id="name"
+                        placeholder="Your Email"
+                        variant="outlined"
+                      />
+                      <TextField
+                        sx={{
+                          mt: 2,
+                        }}
+                        color="secondary"
+                        id="name"
+                        placeholder="Your Enquiries/messages"
+                        multiline
+                        variant="outlined"
+                      />
+                    </FormControl>
+                    <Box
+                      sx={{
+                        py: 2,
+                      }}
+                    >
+                      <Button
+                        color="secondary"
+                        variant="outlined"
+                        size="large"
+                      >
+                        submit
+                      </Button>
+                    </Box>
                   </Box>
                 </Box>
-              </Box>
+              </Container>
             </Box>
           </Box>
         </Box>
