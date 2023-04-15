@@ -10,8 +10,8 @@ const FooterSubTitle: React.FC<Props> = ({title}) => {
         <Typography
         sx={{
           color: "white",
-          fontWeight: "semibold",
-          fontSize: "14px",
+          fontWeight: "bold",
+          fontSize: "16px",
           lineHeight: 2
         }}
         component={"span"}

@@ -1,6 +1,7 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
 import MuiLink from "@mui/material/Link";
+import { color } from "@mui/system";
 
 export default function Copyright() {
   return (
@@ -8,7 +9,8 @@ export default function Copyright() {
       sx={{
         display: 'flex',
         pl: 2,
-        lineHeight: 1.5
+        lineHeight: 1.5,
+        color: 'white'
       }}
     variant="body2" color="text.secondary" align="center">
       {"Copyright © "}

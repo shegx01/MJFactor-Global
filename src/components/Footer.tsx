@@ -6,6 +6,8 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import FooterSubTitle from "./footer/FooterSubTitle";
 import FooterBody from "./footer/FooterBody";
 import Copyright from "./footer/Copyright";
+import Container from "@mui/material/Container";
+import styles from "./footer.module.css";
 
 const Footer = () => {
   const getInTouch = [
@@ -42,53 +44,65 @@ const Footer = () => {
     {
       text: "Water Collector Installation",
     },
-   
+
     {
       text: "Building Contruction",
     },
-   
   ];
 
-  const privacyPolicy = [
-    { text: "Privacy Policy"}
-  ]
+  const privacyPolicy = [{ text: "Privacy Policy" }];
   return (
-    <Box>
-      <Box sx={{ background: "#0E2240", p: 2 }}>
-        <Box
-          sx={{
-            display: "inline-flex",
-            my: 1,
-            background: "#3c4b64",
-            borderRadius: 2,
-          }}
-        >
-          <img
-            style={{ width: "100%" }}
-            src="icons/mjfactor.svg"
-            alt="MJ Factor"
-          />
-        </Box>
+    <Box sx={{ background: "#0E2240", py: 12 }}>
+      <Container>
         <Box>
-          <Box>
-            <FooterSubTitle title="get in touch" />
-            <FooterBody items={getInTouch} />
-          </Box>
-          <Box sx={{
-            mt: 1
-          }}>
-            <FooterSubTitle title="services" />
-            <FooterBody items={servicesList} />
-          </Box>
-          <Box sx={{
-            mt: 1
-          }}>
-            <FooterSubTitle title="policy" />
-            <FooterBody items={privacyPolicy} />
+          <Box css={{}} className={styles.footerContainer}>
+            <Box
+              sx={{
+                display: "block",
+                my: 1,
+              }}
+            >
+              <span
+                css={{
+                  display: "block",
+                  background: "#3c4b64",
+                  borderRadius: 2,
+                }}
+              >
+                <img
+                  style={{ width: "80px", height: "80px%" }}
+                  src="icons/mjfactor.svg"
+                  alt="MJ Factor"
+                />
+              </span>
+            </Box>
+
+            <Box sx={{ mt: 2 }} className={styles.desktopMargin}>
+              <FooterSubTitle title="get in touch" />
+              <FooterBody items={getInTouch} />
+            </Box>
+            <Box
+              sx={{
+                mt: 2,
+              }}
+              className={styles.desktopMargin}
+            >
+              <FooterSubTitle title="services" />
+              <FooterBody items={servicesList} />
+            </Box>
+            <Box
+              sx={{
+                mt: 2,
+              }}
+              className={styles.desktopMargin}
+            >
+              <FooterSubTitle title="policy" />
+              <FooterBody items={privacyPolicy} />
+            </Box>
           </Box>
         </Box>
-      </Box>
-      <Copyright />
+        <Copyright />
+      </Container>
     </Box>
   );
 };

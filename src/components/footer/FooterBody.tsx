@@ -21,7 +21,7 @@ const FooterBody: React.FC<Props> = ({items}) => {
             {!!icon && icon}
             <Typography
               sx={{
-                ml: 1,
+                ml: !!icon ? 1 : 0,
                 fontSize: 13,
                 lineHeight: 1.8,
                 color: "#C7C7C7",
