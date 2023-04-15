@@ -13,9 +13,11 @@ import IconButton from "@mui/material/IconButton";
 import Drawer from "@mui/material/Drawer";
 import Link from "../Link";
 import { useRouter } from "next/router";
+import styles from './header.module.css'
 const Header = () => {
   const router = useRouter();
   const navItems = [
+    { to: "/", label: "Home" },
     { to: "/services", label: "Services" },
     { to: "/about-us", label: "About Us" },
     { to: "/blogs", label: "Blogs" },
@@ -69,7 +71,7 @@ const Header = () => {
       >
         <Toolbar>
           <Box
-            sx={{ display: { xs: "block", sm: "none" } }}
+            sx={{ display: { xs: "block" } }}
             css={{
               cursor: "pointer",
             }}
@@ -81,37 +83,32 @@ const Header = () => {
               alt="MJ Factor"
             />
           </Box>
+
           <Box
             sx={{
-              display: { xs: "none", sm: "block" },
+              display: { xs: "none", sm: "block" }, ml: 'auto'
             }}
           >
             {navItems.map(({ to, label }) => (
               <Link
-                activeClassName={""}
+                activeClassName={styles.activeClassName}
                 href={to}
                 key={to}
                 sx={{
                   color: "inherit",
                   textTransform: "capitalize",
-                  pr: 4,
                   textDecoration: "none",
+                  fontSize: '14px'
                 }}
               >
-                {label}
+                <span css={{
+                  padding: '10px'
+                }}>
+                   {label}
+                </span>
+               
               </Link>
             ))}
-          </Box>
-          <Box sx={{ display: { xs: "none", sm: "block" }, ml: "auto" }}>
-            <img
-              style={{ width: "60%", height: "60%" }}
-              src="/icons/mjfactor.svg"
-              alt="MJ Factor"
-              onClick={() => router.push("/")}
-              css={{
-                cursor: 'pointer'
-              }}
-            />
           </Box>
           <IconButton
             color="inherit"
@@ -125,6 +122,7 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
+          
         </Toolbar>
         <Divider />
       </AppBar>
