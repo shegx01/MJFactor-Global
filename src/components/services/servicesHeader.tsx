@@ -12,7 +12,7 @@ const ServicesHeader: React.FC<Props> = ({ title, excerpt, bgColor}) => {
     <Box
       css={{
         background: bgColor,
-        padding: "30px 0",
+        padding: "50px 0",
       }}
     >
       <Box sx={{ display: "block", color: "white" }}>

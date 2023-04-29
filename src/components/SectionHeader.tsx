@@ -16,7 +16,7 @@ const SectionHeader: React.FC<Props> = ({
 }) => {
   return (
     <Box>
-      <Box sx={{ mt: 4, mb: 2 }}>
+      <Box sx={{ my: 4 }}>
         <Box sx={{ pr: 5 }}>
           <Box sx={{ display: "block", color: "#B5038D" }}>
             <Divider
@@ -33,7 +33,7 @@ const SectionHeader: React.FC<Props> = ({
         </Box>
       </Box>
       {headerSubtitle && (
-        <Box sx={{ mb: 2 }}>
+        <Box sx={{ my: 4 }}>
           <Typography sx={{ fontWeight: "700" }}>{headerSubtitle}</Typography>
         </Box>
       )}
