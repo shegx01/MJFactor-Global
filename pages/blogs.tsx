@@ -16,7 +16,7 @@ const Blogs = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            padding: "20px 0",
+            padding: "30px 0",
           }}
         >
           <Typography component={"span"} variant="h6" css={{}}>
@@ -25,7 +25,7 @@ const Blogs = () => {
         </Box>
         <Box
           css={{
-            padding: "10px 0 40px",
+            padding: "30px 0"
           }}
         >
           {blogsData.map(

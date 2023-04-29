@@ -12,11 +12,15 @@ import { Container } from "@mui/system";
 
 const ContactUs = () => {
   return (
-    <Box>
+    <Container>
+
+    <Box css={{
+      margin: "30px 0"
+    }}>
       <Toolbar />
       <Box>
         <iframe
-          style={{ width: "100vw", height: "40vh" }}
+          style={{ width: "100%", height: "40vh" }}
           src="https://www.google.com/maps/embed/v1/place?q=Joke+plaza+Bodija,+opp.+access+bank+bodija,+Ibadan,+Nigeria&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
         >
           {" "}
@@ -24,7 +28,7 @@ const ContactUs = () => {
       </Box>
 
       <Container>
-        <Box sx={{ background: "", color: "#737A85", pt: 4 }}>
+        <Box sx={{ background: "", color: "#737A85", py: 4 }}>
           <Box
             css={{
               fontSize: 16,
@@ -106,6 +110,7 @@ const ContactUs = () => {
         </Box>
       </Container>
     </Box>
+    </Container>
   );
 };
 

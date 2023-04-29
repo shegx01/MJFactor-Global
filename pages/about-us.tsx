@@ -51,7 +51,7 @@ const AboutUs = () => {
       <Box>
         <Container
           sx={{
-            pb: 2,
+            py: 4,
           }}
         >
           <SectionHeader
@@ -74,6 +74,8 @@ const AboutUs = () => {
             newest products from highly experienced and reputable companies.
           </Typography>
         </Container>
+        <Container>
+
         <Box
           sx={{
             background: "#EEEEEE",
@@ -96,6 +98,7 @@ const AboutUs = () => {
                 maxWidth: "78vw",
                 color: "#0E2240",
                 margin: "20px 0",
+                textAlign: 'center'
               }}
             >
               <Box css={{ alignSelf: "center" }}>{icon}</Box>
@@ -136,6 +139,7 @@ const AboutUs = () => {
           excerpt="AIMS"
           bgColor="#5e5656a6"
         />
+        </Container>
         <Box
           sx={{
             background: "white",
@@ -149,7 +153,9 @@ const AboutUs = () => {
         >
           <Container
             sx={{
-              pb: 2,
+              py: 4,
+              display: 'flex',
+              flexDirection: 'column',
             }}
           >
             <Typography
@@ -182,7 +188,9 @@ const AboutUs = () => {
                   justifyContent: "center",
                   maxWidth: "78vw",
                   color: "#0E2240",
-                  margin: "20px 0",
+                  margin: "30px 0",
+                  alignSelf: 'center',
+                  textAlign: 'center'
                 }}
               >
                 <Box css={{ alignSelf: "center" }}>{icon}</Box>
@@ -190,14 +198,20 @@ const AboutUs = () => {
                   css={{
                     fontSize: "1.2rem",
                     alignSelf: "center",
+                    justifySelf: 'center'
                   }}
                 >
+                  
+
                   {title}
+                  
                 </Typography>
                 <Typography
                   css={{
                     padding: "8px 0",
-                    fontSize: "14px",
+                    fontSize: "1rem",
+                    alignSelf: "center",
+                    justifySelf: 'center'
                   }}
                 >
                   {subTitle}
