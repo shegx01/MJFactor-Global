@@ -1,14 +1,16 @@
 import * as React from "react";
 import { Box } from "@mui/system";
-import { Divider, Toolbar } from "@mui/material";
+import { Toolbar } from "@mui/material";
 import SectionHeader from "../src/components/SectionHeader";
 import Container from "@mui/material/Container";
 import { Typography } from "@mui/material";
 import ServicesData from "../src/components/services/ServicesData";
 import ServicesHeader from "../src/components/services/servicesHeader";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Services = () => {
+  const router = useRouter();
   const servicesMain = [
     {
       title: "Quality Materials",
@@ -28,7 +30,7 @@ const Services = () => {
   ];
   const meta_title = " MJFACTOR - Ours Services Tells More About Our Expertice";
   const meta_description = `The excellent services we render tell a lot about us`;
-  const meta_og_image = `/aboutUs.jpg`;
+  const meta_og_image = router.basePath + "/aboutUs.jpg";
   return (
     <Box>
       <Head>

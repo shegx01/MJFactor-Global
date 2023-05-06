@@ -10,8 +10,11 @@ import ServicesHeader from "../src/components/services/servicesHeader";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const AboutUs = () => {
+  const router = useRouter();
+
   const aboutUs = [
     {
       icon: <EmojiEventsIcon sx={{ color: "#B5038D", fontSize: 45 }} />,
@@ -49,7 +52,7 @@ const AboutUs = () => {
   const meta_title =
     " MJFACTOR - We Are Medium, A brilliant Company With A Proud History";
   const meta_description = `Our team is compact, but our deliverable is unmatchable`;
-  const meta_og_image = `/aboutUs.jpg`;
+  const meta_og_image = router.basePath + "/aboutUs.jpg";
   return (
     <Box>
       <Head>

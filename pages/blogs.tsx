@@ -5,11 +5,13 @@ import ServiceDisplay from "../src/components/ServicesDisplay";
 import ServiceDisplayFooter from "../src/components/ServiceDisplayFooter";
 import Head from "next/head";
 import blogsData from "../src/blogsData";
+import { useRouter } from "next/router";
 
 const Blogs = () => {
+  const router = useRouter();
   const meta_title = " MJFACTOR - Collection of Featured Articles";
   const meta_description = `These articles are some of our experience and ways to help our customers`;
-  const meta_og_image = `/aboutUs.jpg`;
+  const meta_og_image = router.basePath + "/aboutUs.jpg";
   return (
     <Box css={{ background: "#e9e9e95c" }}>
       <Head>

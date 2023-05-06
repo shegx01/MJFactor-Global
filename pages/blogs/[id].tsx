@@ -33,7 +33,8 @@ const Blog: React.FC<BlogData> = () => {
 
   return (
     <Container>
-     { blog && <Head>
+     { 
+     blog && <Head>
         {/* HTML Specific */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>MJFACTOR - {blog.title2}</title>
@@ -42,12 +43,12 @@ const Blog: React.FC<BlogData> = () => {
         <meta name="description" content={blog.body} />
         <meta property="og:title" content={ 'MJFACTOR -' + blog.title2} />
         <meta property="og:description" content={blog.body} />
-        <meta property="og:image" content={blog.imageUrl} />
+        <meta property="og:image" content={router.basePath + blog.imageUrl} />
         {/* Twitter Cards meta */}
-        <meta name="twitter:card" content={blog.imageUrl} />
+        <meta name="twitter:card" content={router.basePath + blog.imageUrl} />
         <meta name="twitter:title" content={'MJFACTOR -' + blog.title2} />
         <meta name="twitter:description" content={blog.body} />
-        <meta name="twitter:image" content={blog.imageUrl} />
+        <meta name="twitter:image" content={router.basePath + blog.imageUrl} />
       </Head>}
       <Box css={{
         padding: "30px 0"

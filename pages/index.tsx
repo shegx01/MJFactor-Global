@@ -15,7 +15,6 @@ import TextField from "@mui/material/TextField";
 import styles from "./index.module.css";
 import { useRouter } from "next/router";
 import Head from "next/head";
-
 export default function Home() {
   const router = useRouter();
   const services = [
@@ -52,7 +51,7 @@ export default function Home() {
   const meta_title =
     " MJFACTOR - We Are The Brilliant In Terms Of Installation And Construction";
   const meta_description = `MJFactor is specialized in roofing, building contruction, interior design, pop installation, electric wire fence, and water collector`;
-  const meta_og_image = `/aboutUs.jpg`;
+  const meta_og_image = router.basePath + "/aboutUs.jpg";
   return (
     <Box>
       <Head>
@@ -430,22 +429,20 @@ export default function Home() {
                     display: "inline-flex",
                   }}
                 >
-                  {[
-                    "/waterBlog.jpg",
-                    "/westernDesktop.jpg",
-                    "/7.jpg",
-                  ].map((url, id) => {
-                    return (
-                      <ImageListItem
-                        key={id}
-                        css={{
-                          marginLeft: id === 0 ? 0 : 10,
-                        }}
-                      >
-                        <img src={url} alt={"image"} />
-                      </ImageListItem>
-                    );
-                  })}
+                  {["/waterBlog.jpg", "/westernDesktop.jpg", "/7.jpg"].map(
+                    (url, id) => {
+                      return (
+                        <ImageListItem
+                          key={id}
+                          css={{
+                            marginLeft: id === 0 ? 0 : 10,
+                          }}
+                        >
+                          <img src={url} alt={"image"} />
+                        </ImageListItem>
+                      );
+                    }
+                  )}
                 </ImageList>
               </Container>
             </Box>
