@@ -20,7 +20,7 @@ export default function Home() {
   const router = useRouter();
   const services = [
     {
-      imageUrl: "/images/roofingWork.jpg",
+      imageUrl: "/roofingWork.jpg",
       title1: "Roofing Work",
       title2: "This is where your spendings is observed",
       body: `MJ FACTOR Is Nigeria’s Fastest Growing Roofing Construction Company
@@ -30,7 +30,7 @@ export default function Home() {
       target: "/services",
     },
     {
-      imageUrl: "/images/cctvImg.jpg",
+      imageUrl: "/cctvImg.jpg",
       title1: "CCTV Installation",
       title2: "The monitoring your home and office deserves",
       body: `Monitoring your home and assets has never been that easy
@@ -40,7 +40,7 @@ export default function Home() {
       target: "/services",
     },
     {
-      imageUrl: "/images/interiorDesign.jpg",
+      imageUrl: "/interiorDesign.jpg",
       title1: "CCTV Installation",
       title2: "Your home can be as beautify as you are",
       body: `We make it our problem to ensure your house is really a place call home. We manage your decorations
@@ -52,7 +52,7 @@ export default function Home() {
   const meta_title =
     " MJFACTOR - We Are The Brilliant In Terms Of Installation And Construction";
   const meta_description = `MJFactor is specialized in roofing, building contruction, interior design, pop installation, electric wire fence, and water collector`;
-  const meta_og_image = `/images/aboutUs.jpg`;
+  const meta_og_image = `/aboutUs.jpg`;
   return (
     <Box>
       <Head>
@@ -83,7 +83,7 @@ export default function Home() {
                 display: "flex",
                 height: 300,
                 width: "100%",
-                backgroundImage: "url(/images/homeRoofing.jpg)",
+                backgroundImage: "url(/homeRoofing.jpg)",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 justifyContent: "center",
@@ -281,7 +281,7 @@ export default function Home() {
                     alignItems: "center",
                   }}
                 >
-                  <ServiceDisplay imageUrl="/images/aboutUs.jpg" height={380} />
+                  <ServiceDisplay imageUrl="/aboutUs.jpg" height={380} />
                 </div>
                 <div className={styles.hidden}>
                   <Box>
@@ -431,9 +431,9 @@ export default function Home() {
                   }}
                 >
                   {[
-                    "/images/waterBlog.jpg",
-                    "/images/westernDesktop.jpg",
-                    "/images/7.jpg",
+                    "/waterBlog.jpg",
+                    "/westernDesktop.jpg",
+                    "/7.jpg",
                   ].map((url, id) => {
                     return (
                       <ImageListItem

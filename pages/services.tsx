@@ -28,7 +28,7 @@ const Services = () => {
   ];
   const meta_title = " MJFACTOR - Ours Services Tells More About Our Expertice";
   const meta_description = `The excellent services we render tell a lot about us`;
-  const meta_og_image = `/images/aboutUs.jpg`;
+  const meta_og_image = `/aboutUs.jpg`;
   return (
     <Box>
       <Head>

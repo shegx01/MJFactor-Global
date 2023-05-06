@@ -9,7 +9,7 @@ import blogsData from "../src/blogsData";
 const Blogs = () => {
   const meta_title = " MJFACTOR - Collection of Featured Articles";
   const meta_description = `These articles are some of our experience and ways to help our customers`;
-  const meta_og_image = `/images/aboutUs.jpg`;
+  const meta_og_image = `/aboutUs.jpg`;
   return (
     <Box css={{ background: "#e9e9e95c" }}>
       <Head>

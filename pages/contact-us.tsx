@@ -14,7 +14,7 @@ const ContactUs = () => {
   const meta_title =
   " MJFACTOR - How You Can Reach Us";
 const meta_description = `Here are the several ways you can contact us`;
-const meta_og_image = `/images/aboutUs.jpg`;
+const meta_og_image = `/aboutUs.jpg`;
   return (
     <Container>
       <Head>

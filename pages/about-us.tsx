@@ -49,7 +49,7 @@ const AboutUs = () => {
   const meta_title =
     " MJFACTOR - We Are Medium, A brilliant Company With A Proud History";
   const meta_description = `Our team is compact, but our deliverable is unmatchable`;
-  const meta_og_image = `/images/aboutUs.jpg`;
+  const meta_og_image = `/aboutUs.jpg`;
   return (
     <Box>
       <Head>
