@@ -14,6 +14,7 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import styles from "./index.module.css";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 export default function Home() {
   const router = useRouter();
@@ -48,8 +49,28 @@ export default function Home() {
       target: "/services",
     },
   ];
+  const meta_title =
+    " MJFACTOR - We Are The Brilliant In Terms Of Installation And Construction";
+  const meta_description = `MJFactor is specialized in roofing, building contruction, interior design, pop installation, electric wire fence, and water collector`;
+  const meta_og_image = `/images/aboutUs.jpg`;
   return (
     <Box>
+      <Head>
+        {/* HTML Specific */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{meta_title}</title>
+
+        {/* Open Graph Metas */}
+        <meta name="description" content={meta_description} />
+        <meta property="og:title" content={meta_title} />
+        <meta property="og:description" content={meta_description} />
+        <meta property="og:image" content={meta_og_image} />
+        {/* Twitter Cards meta */}
+        <meta name="twitter:card" content={meta_og_image} />
+        <meta name="twitter:title" content={meta_title} />
+        <meta name="twitter:description" content={meta_description} />
+        <meta name="twitter:image" content={meta_og_image} />
+      </Head>
       <Box sx={{ display: "flex" }}>
         <Box component="main" sx={{ p: 0, width: "100%" }}>
           <Toolbar />
@@ -399,7 +420,7 @@ export default function Home() {
               </Container>
             </Box>
             <Box sx={{ background: "", pt: 1, pb: 4 }}>
-              <Container sx={{ my: 4}}>
+              <Container sx={{ my: 4 }}>
                 <SectionHeader
                   headerSubtitle={"Discover some of our latest projects"}
                   headerTitle={"Projects"}
@@ -429,7 +450,7 @@ export default function Home() {
               </Container>
             </Box>
             <Box sx={{ background: "#0e2240cf", color: "white", p: 2 }}>
-              <Container sx={{my: 4}}>
+              <Container sx={{ my: 4 }}>
                 <Box
                   css={{
                     textTransform: "uppercase",
@@ -444,7 +465,7 @@ export default function Home() {
                   css={{
                     fontSize: 14,
                     lineHeight: 2,
-                    maxWidth: "700px"
+                    maxWidth: "700px",
                   }}
                 >
                   Do you need help with roof installations, building
@@ -515,11 +536,7 @@ export default function Home() {
                         py: 2,
                       }}
                     >
-                      <Button
-                        color="secondary"
-                        variant="outlined"
-                        size="large"
-                      >
+                      <Button color="secondary" variant="outlined" size="large">
                         submit
                       </Button>
                     </Box>

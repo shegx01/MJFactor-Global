@@ -7,8 +7,9 @@ import InstallDesktopIcon from "@mui/icons-material/InstallDesktop";
 import PsychologyIcon from "@mui/icons-material/Psychology";
 import ServicesData from "../src/components/services/ServicesData";
 import ServicesHeader from "../src/components/services/servicesHeader";
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import ConfirmationNumberIcon from '@mui/icons-material/ConfirmationNumber';
+import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import ConfirmationNumberIcon from "@mui/icons-material/ConfirmationNumber";
+import Head from "next/head";
 
 const AboutUs = () => {
   const aboutUs = [
@@ -33,20 +34,40 @@ const AboutUs = () => {
   ];
   const visionAndMission = [
     {
-        icon: <RemoveRedEyeIcon sx={{ color: "#B5038D", fontSize: 45 }} />,
+      icon: <RemoveRedEyeIcon sx={{ color: "#B5038D", fontSize: 45 }} />,
       title: "Our Vision",
       subTitle:
         "Our Vision is to reach the world with quality and affordable products.",
     },
     {
-        icon: <ConfirmationNumberIcon sx={{ color: "#B5038D", fontSize: 45 }} />,
+      icon: <ConfirmationNumberIcon sx={{ color: "#B5038D", fontSize: 45 }} />,
       title: "Our Mission",
       subTitle:
         "Our Mission is to achieve customer satisfaction through competent personnel, efficient information and technology.",
     },
   ];
+  const meta_title =
+    " MJFACTOR - We Are Medium, A brilliant Company With A Proud History";
+  const meta_description = `Our team is compact, but our deliverable is unmatchable`;
+  const meta_og_image = `/images/aboutUs.jpg`;
   return (
     <Box>
+      <Head>
+        {/* HTML Specific */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{meta_title}</title>
+
+        {/* Open Graph Metas */}
+        <meta name="description" content={meta_description} />
+        <meta property="og:title" content={meta_title} />
+        <meta property="og:description" content={meta_description} />
+        <meta property="og:image" content={meta_og_image} />
+        {/* Twitter Cards meta */}
+        <meta name="twitter:card" content={meta_og_image} />
+        <meta name="twitter:title" content={meta_title} />
+        <meta name="twitter:description" content={meta_description} />
+        <meta name="twitter:image" content={meta_og_image} />
+      </Head>
       <Toolbar />
       <Box>
         <Container
@@ -75,70 +96,69 @@ const AboutUs = () => {
           </Typography>
         </Container>
         <Container>
-
-        <Box
-          sx={{
-            background: "#EEEEEE",
-            py: 4,
-            display: "flex",
-            width: "100%",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {aboutUs.map(({ title, subTitle, icon }) => (
-            <Box
-              key={title}
-              css={{
-                display: "flex",
-                flexDirection: "column",
-                alignContent: "center",
-                justifyContent: "center",
-                maxWidth: "78vw",
-                color: "#0E2240",
-                margin: "20px 0",
-                textAlign: 'center'
-              }}
-            >
-              <Box css={{ alignSelf: "center" }}>{icon}</Box>
-              <Typography
+          <Box
+            sx={{
+              background: "#EEEEEE",
+              py: 4,
+              display: "flex",
+              width: "100%",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {aboutUs.map(({ title, subTitle, icon }) => (
+              <Box
+                key={title}
                 css={{
-                  fontSize: "1.2rem",
-                  alignSelf: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignContent: "center",
+                  justifyContent: "center",
+                  maxWidth: "78vw",
+                  color: "#0E2240",
+                  margin: "20px 0",
+                  textAlign: "center",
                 }}
               >
-                {title}
-              </Typography>
-              <Typography
-                css={{
-                  padding: "8px 0",
-                  fontSize: "14px",
-                }}
-              >
-                {subTitle}
-              </Typography>
-            </Box>
-          ))}
-          <ServicesData
-            body1="The installation and constructions we’ve make are always perfect and
+                <Box css={{ alignSelf: "center" }}>{icon}</Box>
+                <Typography
+                  css={{
+                    fontSize: "1.2rem",
+                    alignSelf: "center",
+                  }}
+                >
+                  {title}
+                </Typography>
+                <Typography
+                  css={{
+                    padding: "8px 0",
+                    fontSize: "14px",
+                  }}
+                >
+                  {subTitle}
+                </Typography>
+              </Box>
+            ))}
+            <ServicesData
+              body1="The installation and constructions we’ve make are always perfect and
          standard, this enable our customer to have a strong feelings about
          us and refer us to friends and family to make us work o their
          project as well, we have experience workers and we always focus on
          our works to bring good results for customer satisfaction"
-            body2="We offer a variety of Stone Coated Roof Tiles, Truss Roofing,
+              body2="We offer a variety of Stone Coated Roof Tiles, Truss Roofing,
          Alluminium Roofing, Roof Gutters, Building Constructions, Interior
          Design, Plaster of Paris (POP), Electric Wire Fence and Security
          Cameras (CCTV). We supply and install for all our customers. Contact
          us today to get the best value in building materials and
          surveillance gadgets for your home or offices."
+            />
+          </Box>
+          <ServicesHeader
+            title="Our Aims and Target"
+            excerpt="AIMS"
+            bgColor="#5e5656a6"
           />
-        </Box>
-        <ServicesHeader
-          title="Our Aims and Target"
-          excerpt="AIMS"
-          bgColor="#5e5656a6"
-        />
         </Container>
         <Box
           sx={{
@@ -154,8 +174,8 @@ const AboutUs = () => {
           <Container
             sx={{
               py: 4,
-              display: 'flex',
-              flexDirection: 'column',
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <Typography
@@ -189,8 +209,8 @@ const AboutUs = () => {
                   maxWidth: "78vw",
                   color: "#0E2240",
                   margin: "30px 0",
-                  alignSelf: 'center',
-                  textAlign: 'center'
+                  alignSelf: "center",
+                  textAlign: "center",
                 }}
               >
                 <Box css={{ alignSelf: "center" }}>{icon}</Box>
@@ -198,20 +218,17 @@ const AboutUs = () => {
                   css={{
                     fontSize: "1.2rem",
                     alignSelf: "center",
-                    justifySelf: 'center'
+                    justifySelf: "center",
                   }}
                 >
-                  
-
                   {title}
-                  
                 </Typography>
                 <Typography
                   css={{
                     padding: "8px 0",
                     fontSize: "1rem",
                     alignSelf: "center",
-                    justifySelf: 'center'
+                    justifySelf: "center",
                   }}
                 >
                   {subTitle}

@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import blogsData from "../../src/blogsData";
 import { preprocessText } from "../../src/utils/preprocessText";
 import ServiceDisplay from "../../src/components/ServicesDisplay";
+import Head from "next/head";
 
 type BlogData = {
   target: string;
@@ -29,8 +30,25 @@ const Blog: React.FC<BlogData> = () => {
     setId(router.query.id as string);
     setBlog(() => getBlogData(router.query.id as string, blogsData));
   }, [router.query.id]);
+
   return (
     <Container>
+     { blog && <Head>
+        {/* HTML Specific */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>MJFACTOR - {blog.title2}</title>
+
+        {/* Open Graph Metas */}
+        <meta name="description" content={blog.body} />
+        <meta property="og:title" content={ 'MJFACTOR -' + blog.title2} />
+        <meta property="og:description" content={blog.body} />
+        <meta property="og:image" content={blog.imageUrl} />
+        {/* Twitter Cards meta */}
+        <meta name="twitter:card" content={blog.imageUrl} />
+        <meta name="twitter:title" content={'MJFACTOR -' + blog.title2} />
+        <meta name="twitter:description" content={blog.body} />
+        <meta name="twitter:image" content={blog.imageUrl} />
+      </Head>}
       <Box css={{
         padding: "30px 0"
       }}>

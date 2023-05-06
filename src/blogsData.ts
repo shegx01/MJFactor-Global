@@ -2,7 +2,7 @@ const blogsData = [
     {
       imageUrl: "/images/cctvImg.jpg",
       title1: "September 14, 2022 --- News",
-      title2: "Everything you need to know about CCTV",
+      title2: "Everything You Need To Know About CCTV",
       body: "CCTV is a closed-circuit television. It is a television system in which signals are monitored but not publicly distributed. The main reason for the use of CCTV is for surveillance and....",
       buttonText: "Read More",
       target: "/blogs/everything-you-need-to-know-about-cctv",
@@ -129,7 +129,7 @@ const blogsData = [
     {
       imageUrl: "/images/electricWireFence.jpg",
       title1: "September 14, 2022 --- News",
-      title2: "Always get Electric wire Fence for Security reasons",
+      title2: "Always Get Electric Wire Fence For Security Reasons",
       body: "Burglars and intruders generally would attempt to scale or defeat your other types of security but you know what they would not dare do? They would not trespass when it's an electric fence....",
       buttonText: "Read More",
       target: "/blogs/always-get-electric-wire-fence-for-security-reasons",
@@ -246,7 +246,7 @@ const blogsData = [
     {
       imageUrl: "/images/interiorDesign.jpg",
       title1: "September 14, 2022 --- News",
-      title2: "Beautiful Interior Design ideas and how to go about it",
+      title2: "Beautiful Interior Design ideas And How To Go About It",
       body: "In interior design, planning and design of man-made spaces are a part of environmental design and closely related to architecture...",
       buttonText: "Read More",
       target: "/blogs/beautiful-interior-design-ideas-and-how-to-go-about-it",
@@ -332,7 +332,7 @@ const blogsData = [
     {
       imageUrl: "/images/gerrardRoof.jpg",
       title1: "September 14, 2022 --- News",
-      title2: "Your Better Roofing option",
+      title2: "Your Better Roofing Option",
       body: "While others saw the rainy season as a Blessing, (Improved crop yield for farmers, reduction of dust on roads, cleaner air to breathe in and cool weather generally) it was not the same for the Peters'.",
       buttonText: "Read More",
       target: "/blogs/your-better-roofing-option",
@@ -435,7 +435,7 @@ const blogsData = [
     {
       imageUrl: "/images/BuildingWork.jpg",
       title1: "September 14, 2022 --- News",
-      title2: "Top 5 qualities to look out for in a good building",
+      title2: "Top 5 Qualities To Look Out For In A Good Building",
       body: "MJ Factors has your interest at heart. All you need do is to check out our portfolio, past projects and current projects, then trust us to do an outstanding job with yours...",
       buttonText: "Read More",
       target: "/blogs/top-5-qualities-to-look-out-for-in-a-good-building",
@@ -513,7 +513,7 @@ const blogsData = [
     {
       imageUrl: "/images/POPIntallation.jpg",
       title1: "September 14, 2022 --- News",
-      title2: "How to get the Best POP installation for your spaces",
+      title2: "How To Get The Best POP Installation For Your Spaces",
       body: "A POP is a false ceiling which is made from plaster Paris. It was given the name 'plaster of Paris' because it was made from gypsum and located very close to Paris in France...",
       buttonText: "Read More",
       target: "/blogs/how-to-get-the-best-pop-installation-for-your-spaces",
@@ -625,7 +625,7 @@ const blogsData = [
     {
       imageUrl: "/images/waterCollector.jpg",
       title1: "September 14, 2022 --- News",
-      title2: "Still in doubt about Roof Water Collectors? Check this out",
+      title2: "Still In Doubt About Roof Water Collectors? Check This Out",
       body: "A roof water collector is a channel or a pathway (usually a trough) forming the components of a roof system which collects and diverts water away from the edges of the roof.....",
       buttonText: "Read More",
       target: "/blogs/still-in-doubt-about-roof-water-collectors",

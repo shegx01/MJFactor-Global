@@ -1,19 +1,38 @@
 import React from "react";
 import {
   Button,
-  Divider,
   FormControl,
   TextField,
   Toolbar,
 } from "@mui/material";
+import Head from "next/head";
 
 import { Box } from "@mui/material";
 import { Container } from "@mui/system";
 
 const ContactUs = () => {
+  const meta_title =
+  " MJFACTOR - How You Can Reach Us";
+const meta_description = `Here are the several ways you can contact us`;
+const meta_og_image = `/images/aboutUs.jpg`;
   return (
     <Container>
+      <Head>
+        {/* HTML Specific */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{meta_title}</title>
 
+        {/* Open Graph Metas */}
+        <meta name="description" content={meta_description} />
+        <meta property="og:title" content={meta_title} />
+        <meta property="og:description" content={meta_description} />
+        <meta property="og:image" content={meta_og_image} />
+        {/* Twitter Cards meta */}
+        <meta name="twitter:card" content={meta_og_image} />
+        <meta name="twitter:title" content={meta_title} />
+        <meta name="twitter:description" content={meta_description} />
+        <meta name="twitter:image" content={meta_og_image} />
+      </Head>
     <Box css={{
       margin: "30px 0"
     }}>

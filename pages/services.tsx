@@ -6,6 +6,7 @@ import Container from "@mui/material/Container";
 import { Typography } from "@mui/material";
 import ServicesData from "../src/components/services/ServicesData";
 import ServicesHeader from "../src/components/services/servicesHeader";
+import Head from "next/head";
 
 const Services = () => {
   const servicesMain = [
@@ -25,8 +26,27 @@ const Services = () => {
         "We have experience workers, they are ready to work and attend to all your queries, and give yu best results at the end of the project. Excellent and Good team work at MJ FACTOR. ",
     },
   ];
+  const meta_title = " MJFACTOR - Ours Services Tells More About Our Expertice";
+  const meta_description = `The excellent services we render tell a lot about us`;
+  const meta_og_image = `/images/aboutUs.jpg`;
   return (
     <Box>
+      <Head>
+        {/* HTML Specific */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{meta_title}</title>
+
+        {/* Open Graph Metas */}
+        <meta name="description" content={meta_description} />
+        <meta property="og:title" content={meta_title} />
+        <meta property="og:description" content={meta_description} />
+        <meta property="og:image" content={meta_og_image} />
+        {/* Twitter Cards meta */}
+        <meta name="twitter:card" content={meta_og_image} />
+        <meta name="twitter:title" content={meta_title} />
+        <meta name="twitter:description" content={meta_description} />
+        <meta name="twitter:image" content={meta_og_image} />
+      </Head>
       <Toolbar />
       <Box>
         <Container
